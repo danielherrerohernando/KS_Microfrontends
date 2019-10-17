@@ -1,0 +1,22 @@
+.mf01_projectdata {
+    width: 100%;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(202, 202, 202);
+}
+
+label {
+    display: block;
+    margin: 15px 0px 5px 5px;
+}
