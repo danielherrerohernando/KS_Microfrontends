@@ -10,6 +10,10 @@ const App = () => {
     React.useEffect(() => {
         document.addEventListener('projectname:changed', ({detail}) => setProjectName(detail))
         document.addEventListener('projectframework:changed', ({detail}) => setFrameworkName(detail.value))
+        return () => {
+            document.removeEventListener('projectname:changed')
+            document.removeEventListener('projectframework:changed')
+        }
     }, [])
 
     return (
