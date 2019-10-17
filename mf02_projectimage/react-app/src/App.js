@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './App.css'
 
@@ -8,9 +9,9 @@ import angularImg from './images/Angular.svg'
 import vueImg from './images/vue.png'
 
 const images = {
-    react: reactImg,
-    vue: vueImg,
-    angular: angularImg,
+    React: reactImg,
+    Vue: vueImg,
+    Angular: angularImg,
 }
 
 const App = ({image}) => {
@@ -19,6 +20,10 @@ const App = ({image}) => {
             <img src={images[image]}></img>
         </div>
     )
+}
+
+App.propTypes = {
+    image: PropTypes.string,
 }
 
 export default App

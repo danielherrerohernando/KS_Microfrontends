@@ -17,14 +17,20 @@ const fragments = () => {
         disconnectedCallback() {
             this.log('disconnected')
         }
-    }
 
-    class MfTemplate extends MicroFrontend {
+        static get observedAttributes() {
+            return ['framework']
+        }
+
+        attributeChangedCallback() {
+            this.render()
+        }
+
         render() {
-            ReactDOM.render(<App />, this)
+            ReactDOM.render(<App image={this.getAttribute('framework')} />, this)
         }
     }
-    window.customElements.define('mf02_projectimage-tag', MfTemplate)
+    window.customElements.define('mf02_projectimage-tag', MicroFrontend)
 }
 
 fragments()

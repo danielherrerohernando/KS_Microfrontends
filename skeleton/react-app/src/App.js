@@ -4,8 +4,14 @@ import React from 'react'
 import './App.css'
 
 const App = () => {
-    const [projectName, setProjectName] = React.useState(' ')
-    const [frameworkName, setFrameworkName] = React.useState(' ')
+    const [projectName, setProjectName] = React.useState('')
+    const [frameworkName, setFrameworkName] = React.useState('')
+
+    React.useEffect(() => {
+        document.addEventListener('projectname:changed', ({detail}) => setProjectName(detail))
+        document.addEventListener('projectframework:changed', ({detail}) => setFrameworkName(detail.value))
+    }, [])
+
     return (
         <>
             <div id="skeleton">
@@ -20,7 +26,7 @@ const App = () => {
                     </div>
                     <div className="boxes">
                         <mf01_projectdata-tag></mf01_projectdata-tag>
-                        <mf02_projectimage-tag></mf02_projectimage-tag>
+                        <mf02_projectimage-tag framework={frameworkName}></mf02_projectimage-tag>
                     </div>
                 </div>
             </div>

@@ -17,14 +17,32 @@ const fragments = () => {
         disconnectedCallback() {
             this.log('disconnected')
         }
-    }
 
-    class MfTemplate extends MicroFrontend {
+        refreshName(name) {
+            this.dispatchEvent(
+                new CustomEvent('projectname:changed', {
+                    bubbles: true,
+                    detail: name,
+                }),
+            )
+        }
+        refreshFramework(framework) {
+            this.dispatchEvent(
+                new CustomEvent('projectframework:changed', {
+                    bubbles: true,
+                    detail: framework,
+                }),
+            )
+        }
         render() {
-            ReactDOM.render(<App />, this)
+            ReactDOM.render(
+                <App refreshName={this.refreshName.bind(this)} refreshFramework={this.refreshFramework.bind(this)} />,
+                this,
+            )
         }
     }
-    window.customElements.define('mf01_projectdata-tag', MfTemplate)
+
+    window.customElements.define('mf01_projectdata-tag', MicroFrontend)
 }
 
 fragments()

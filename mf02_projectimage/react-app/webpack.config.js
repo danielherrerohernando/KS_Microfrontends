@@ -43,14 +43,13 @@ module.exports = env => {
                     ],
                 },
                 {
-                    test: /\.(gif|png|jpe?g|svg)$/i,
+                    test: /\.(png|jp(e*)g|svg)$/,
                     use: [
-                        'file-loader',
                         {
-                            loader: 'image-webpack-loader',
+                            loader: 'url-loader',
                             options: {
-                                bypassOnDebug: true, // webpack@1.x
-                                disable: true, // webpack@2.x and newer
+                                limit: 1000000, // Convert images < 8kb to base64 strings
+                                name: 'images/[hash]-[name].[ext]',
                             },
                         },
                     ],
