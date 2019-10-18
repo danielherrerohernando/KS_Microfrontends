@@ -1,7 +1,0 @@
-version: "3"
-
-services:
-  service:
-    image: ilwebshops.azurecr.io/infinitaslearning/skeleton:latest
-    container_name: skeleton
-    command: ["sh", "-c", "tail -f /dev/null"]
