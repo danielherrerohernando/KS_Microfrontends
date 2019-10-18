@@ -1,0 +1,39 @@
+{
+  "name": "mf03_vuetest-react-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.js --env.TARGET=app",
+    "build:microfrontend": "webpack --config webpack.config.js --env.TARGET=export --mode=production",
+    "build:independent": "webpack --config webpack.config.js --env.TARGET=no --mode=production"
+  },
+  "dependencies": {
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@testing-library/react": "^9.3.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "dotenv-webpack": "^1.7.0",
+    "identity-obj-proxy": "^3.0.0",
+    "style-loader": "^0.23.1",
+    "vue-loader": "^15.7.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  }
+}

@@ -17,6 +17,7 @@ h3 {
 }
 
 .skeleton-app {
+    position: relative;
     width: 50%;
     padding: 10px;
     margin: 100px auto;
@@ -43,4 +44,10 @@ mf02_projectimage-tag {
     box-sizing: border-box;
     margin: 20px;
     width: 100%;
+}
+
+.superbutton {
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }

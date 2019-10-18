@@ -1,0 +1,7 @@
+version: "3"
+
+services:
+  service:
+    image: ilwebshops.azurecr.io/infinitaslearning/mf03_vuetest:latest
+    container_name: mf03_vuetest
+    command: ["sh", "-c", "tail -f /dev/null"]
